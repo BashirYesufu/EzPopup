@@ -7,6 +7,7 @@
 
 import UIKit
 
+@available(iOS 13.0, *)
 public protocol PopupViewControllerDelegate: AnyObject {
     
     /// It is called when pop up is dismissed by tap outside
@@ -14,10 +15,12 @@ public protocol PopupViewControllerDelegate: AnyObject {
 }
 
 // optional func
+@available(iOS 13.0, *)
 public extension PopupViewControllerDelegate {
     func popupViewControllerDidDismissByTapGesture(_ sender: PopupViewController) {}
 }
 
+@available(iOS 13.0, *)
 open class PopupViewController: UIViewController {
     
     public enum PopupPosition {
@@ -325,6 +328,7 @@ open class PopupViewController: UIViewController {
 }
 
 // MARK: - UIGestureRecognizerDelegate
+@available(iOS 13.0, *)
 extension PopupViewController: UIGestureRecognizerDelegate {
     public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
         guard let touchView = touch.view, canTapOutsideToDismiss else {
